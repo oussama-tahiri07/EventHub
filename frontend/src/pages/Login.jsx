@@ -4,8 +4,8 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { Sparkles, Lock, Mail, AlertCircle, ArrowRight, ShieldCheck, UserCheck } from 'lucide-react';
 
 export const Login = () => {
-  const [email, setEmail] = useState('admin@eventhub.com');
-  const [password, setPassword] = useState('password123');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -30,11 +30,6 @@ export const Login = () => {
     } finally {
       setLoading(false);
     }
-  };
-
-  const handleQuickFill = (testEmail, testRole) => {
-    setEmail(testEmail);
-    setPassword('password123');
   };
 
   return (
@@ -115,7 +110,6 @@ export const Login = () => {
             <div className="grid grid-cols-2 gap-2.5">
               <button
                 type="button"
-                onClick={() => handleQuickFill('admin@eventhub.com', 'admin')}
                 className="flex items-center justify-center gap-2 py-2 px-3 rounded-xl bg-purple-500/10 hover:bg-purple-500/20 border border-purple-500/30 text-purple-300 text-xs font-medium transition"
               >
                 <ShieldCheck className="w-3.5 h-3.5" />
@@ -123,16 +117,13 @@ export const Login = () => {
               </button>
               <button
                 type="button"
-                onClick={() => handleQuickFill('staff@eventhub.com', 'staff')}
                 className="flex items-center justify-center gap-2 py-2 px-3 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 text-emerald-300 text-xs font-medium transition"
               >
                 <UserCheck className="w-3.5 h-3.5" />
                 <span>Staff</span>
               </button>
             </div>
-            <p className="text-[11px] text-slate-400 text-center mt-2.5">
-              Mot de passe par défaut : <code className="text-purple-300">password123</code>
-            </p>
+
           </div>
         </div>
       </div>
