@@ -15,7 +15,7 @@ Application web complète de gestion centralisée d'événements, d'inscriptions
 
 ---
 
-## 🏛 Architecture & Conception
+## Architecture & Conception
 
 Le document complet de conception avec diagramme Entité-Relation (Mermaid), contraintes et index recommandés est consultable dans :  
 -> **[`docs/CONCEPTION.md`](file:///docs/CONCEPTION.md)**
