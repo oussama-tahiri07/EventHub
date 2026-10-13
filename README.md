@@ -4,7 +4,7 @@ Application web complète de gestion centralisée d'événements, d'inscriptions
 
 ---
 
-## 📌 Sommaire
+## Sommaire
 - [Architecture & Conception](#-architecture--conception)
 - [Fonctionnalités & Règles Métier](#-fonctionnalités--règles-métier)
 - [Identifiants de Test (Seed)](#-identifiants-de-test-seed)
@@ -18,7 +18,7 @@ Application web complète de gestion centralisée d'événements, d'inscriptions
 ## 🏛 Architecture & Conception
 
 Le document complet de conception avec diagramme Entité-Relation (Mermaid), contraintes et index recommandés est consultable dans :  
-👉 **[`docs/CONCEPTION.md`](file:///docs/CONCEPTION.md)**
+-> **[`docs/CONCEPTION.md`](file:///docs/CONCEPTION.md)**
 
 ```
 Tython/
@@ -52,7 +52,7 @@ Tython/
 
 ---
 
-## 🛡 Fonctionnalités & Règles Métier
+## Fonctionnalités & Règles Métier
 
 1. **Authentification & Rôles** :
    - Rôle `admin` : accès complet aux événements, inscriptions et participants.
@@ -60,10 +60,10 @@ Tython/
    - Sécurisation par token JWT (Bearer) et mots de passe hachés avec **bcrypt**.
 
 2. **Règles Métier Obligatoires Respectées** :
-   - ✅ **Règle 1** : Impossible d'inscrire un participant sur un événement non publié (`HTTP 400`).
-   - ✅ **Règle 2** : Un participant ne peut pas s'inscrire 2 fois au même événement (Contrainte unique `(event_id, participant_id)` + `HTTP 409`).
-   - ✅ **Règle 3** : Respect strict de `maxParticipants` (blocage atomique si complet avec `HTTP 400`).
-   - ✅ **Règle 4** : Quand un événement passe à `cancelled`, toutes ses inscriptions passent automatiquement à `cancelled` (transaction contrôlée + trigger SQL).
+   -  **Règle 1** : Impossible d'inscrire un participant sur un événement non publié (`HTTP 400`).
+   -  **Règle 2** : Un participant ne peut pas s'inscrire 2 fois au même événement (Contrainte unique `(event_id, participant_id)` + `HTTP 409`).
+   -  **Règle 3** : Respect strict de `maxParticipants` (blocage atomique si complet avec `HTTP 400`).
+   -  **Règle 4** : Quand un événement passe à `cancelled`, toutes ses inscriptions passent automatiquement à `cancelled` (transaction contrôlée + trigger SQL).
 
 3. **Dashboard (KPIs en temps réel)** :
    - Nombre total d'événements
@@ -73,7 +73,7 @@ Tython/
 
 ---
 
-## 🔑 Identifiants de Test (Seed)
+## Identifiants de Test (Seed)
 
 Le script de seed injecte par défaut :
 - **1 Administrateur** :
@@ -92,7 +92,7 @@ Le script de seed injecte par défaut :
 
 ---
 
-## 🐳 Démarrage Rapide avec Docker Compose
+## Démarrage Rapide avec Docker Compose
 
 Pour lancer l'ensemble de l'infrastructure en une seule commande :
 
@@ -112,7 +112,7 @@ docker compose down
 
 ---
 
-## 💻 Installation Manuelle Locale
+## Installation Manuelle Locale
 
 ### Prérequis
 - Node.js 18+
@@ -161,10 +161,10 @@ L'application démarre sur : [http://localhost:3000](http://localhost:3000)
 
 ---
 
-## 📖 Documentation de l'API (Swagger / OpenAPI)
+## Documentation de l'API (Swagger / OpenAPI)
 
 Une interface Swagger interactive est disponible pour explorer et tester directement tous les endpoints :  
-👉 **[http://localhost:5000/api/docs](http://localhost:5000/api/docs)**
+-> **[http://localhost:5000/api/docs](http://localhost:5000/api/docs)**
 
 ### Principaux Endpoints REST
 
@@ -189,7 +189,7 @@ Une interface Swagger interactive est disponible pour explorer et tester directe
 
 ---
 
-## 🧪 Tests Automatisés Backend
+## Tests Automatisés Backend
 
 La suite de tests automatisés vérifie l'ensemble des règles métier, l'authentification et les contrôles de sécurité :
 
